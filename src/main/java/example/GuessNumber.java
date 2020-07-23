@@ -12,7 +12,11 @@ public class GuessNumber {
         if (isAllRight(inputGuess, answer)) {
             return "4A0B";
         }
-        int correctPositionAmount =  getOnCorrectPositionAmount(answer,inputGuess);
+        int correctPositionAmount = getOnCorrectPositionAmount(answer, inputGuess);
+        int inputNUmberInAnswerAmount = getNumberInAnswerAmount(answer,inputGuess);
+        if(inputNUmberInAnswerAmount != 4 && inputNUmberInAnswerAmount != 0){
+            return correctPositionAmount + "A" + (inputNUmberInAnswerAmount -correctPositionAmount) + "B";
+        }
         return String.format("%dA%dB", correctPositionAmount, inputGuess.length - correctPositionAmount);
     }
 
@@ -34,11 +38,21 @@ public class GuessNumber {
         return false;
     }
 
+    private int getNumberInAnswerAmount(int[] answer, int[] inputNumbers) {
+        int count = 0;
+        for (int currentNumber : inputNumbers) {
+            if (isAnswerContainNumber(answer, currentNumber)) {
+                count++;
+            }
+        }
+        return count;
+    }
+
     private int getOnCorrectPositionAmount(int[] answer, int[] inputNumbers) {
         int count = 0;
         for (int index = 0; index < answer.length; index++) {
             if (answer[index] == inputNumbers[index]) {
-                count ++;
+                count++;
             }
         }
         return count;
