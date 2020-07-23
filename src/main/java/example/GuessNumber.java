@@ -18,6 +18,7 @@ public class GuessNumber {
             if (correctPositionAmount > 0) {
                 return String.format("%dA%dB", correctPositionAmount, inputNUmberInAnswerAmount - correctPositionAmount);
             }
+            return String.format("0A%dB", inputNUmberInAnswerAmount);
         }
         return String.format("%dA%dB", correctPositionAmount, inputGuess.length - correctPositionAmount);
     }
