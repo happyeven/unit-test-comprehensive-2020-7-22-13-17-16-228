@@ -14,7 +14,7 @@ public class GuessNumber {
         }
         int correctPositionAmount = getOnCorrectPositionAmount(answer, inputGuess);
         int inputNUmberInAnswerAmount = getNumberInAnswerAmount(answer,inputGuess);
-        if(inputNUmberInAnswerAmount != 4 && inputNUmberInAnswerAmount != 0){
+        if(inputNUmberInAnswerAmount != 4 && inputNUmberInAnswerAmount != 0 && correctPositionAmount > 0){
             return correctPositionAmount + "A" + (inputNUmberInAnswerAmount -correctPositionAmount) + "B";
         }
         return String.format("%dA%dB", correctPositionAmount, inputGuess.length - correctPositionAmount);

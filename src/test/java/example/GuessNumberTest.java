@@ -63,4 +63,6 @@ public class GuessNumberTest {
         //then
         assertEquals("1A1B", result);
     }
+
+
 }
