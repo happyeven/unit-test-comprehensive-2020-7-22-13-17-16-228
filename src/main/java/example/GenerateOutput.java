@@ -10,6 +10,9 @@ public class GenerateOutput {
     }
 
     public String getOutput(int[] inputGuess) {
+        if(!verifyInputNumbers.isisLegalInputNumbers(inputGuess)){
+            return "Wrong Input,Input again";
+        }
         return null;
     }
 }
