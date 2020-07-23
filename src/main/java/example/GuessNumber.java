@@ -9,27 +9,16 @@ public class GuessNumber {
 
     public String guess(int[] inputGuess) {
         int[] answer = this.answer;
-        if (isAllRight(inputGuess, answer)) {
-            return "4A0B";
-        }
         int correctPositionAmount = getOnCorrectPositionAmount(answer, inputGuess);
         int inputNUmberInAnswerAmount = getNumberInAnswerAmount(answer, inputGuess);
-        if (inputNUmberInAnswerAmount != 4 && inputNUmberInAnswerAmount != 0) {
-            if (correctPositionAmount > 0) {
-                return String.format("%dA%dB", correctPositionAmount, inputNUmberInAnswerAmount - correctPositionAmount);
-            }
-            return String.format("0A%dB", inputNUmberInAnswerAmount);
+        int answerLength = answer.length;
+        if (inputNUmberInAnswerAmount == answerLength) {
+            return correctPositionAmount + "A" + (answerLength - correctPositionAmount) + "B";
         }
-        return String.format("%dA%dB", correctPositionAmount, inputGuess.length - correctPositionAmount);
-    }
-
-    public boolean isAllRight(int[] inputGuess, int[] answer) {
-        for (int index = 0; index < answer.length; index++) {
-            if (answer[index] != inputGuess[index]) {
-                return false;
-            }
+        if(inputNUmberInAnswerAmount < 4 && inputNUmberInAnswerAmount >0){
+            return String.format("%dA%dB", correctPositionAmount, inputNUmberInAnswerAmount - correctPositionAmount);
         }
-        return true;
+        return null;
     }
 
     private boolean isAnswerContainNumber(int[] answer, int inputNumber) {
