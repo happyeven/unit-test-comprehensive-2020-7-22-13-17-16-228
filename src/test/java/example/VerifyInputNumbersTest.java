@@ -15,4 +15,15 @@ public class VerifyInputNumbersTest {
         //then
         assertEquals(false,isLegalInputNumbers);
     }
+
+    @Test
+    void should_return_false_when_verify_input_numbers_given_1123() {
+        //given
+        VerifyInputNumbers verifyInputNumbers = new VerifyInputNumbers();
+        int[] inputGuess = {1,1,2,3};
+        //when
+        boolean isLegalInputNumbers = verifyInputNumbers.isisLegalInputNumbers(inputGuess);
+        //then
+        assertEquals(false,isLegalInputNumbers);
+    }
 }
