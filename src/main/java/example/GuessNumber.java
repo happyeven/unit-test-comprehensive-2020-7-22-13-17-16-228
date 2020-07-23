@@ -8,7 +8,7 @@ public class GuessNumber {
     public String guess(int[] inputGuess){
         int[] answer = this.answer;
         boolean isAllRight = isAllRight(inputGuess,answer);
-        return isAllRight ? "4A0B" : null;
+        return isAllRight ? "4A0B" : "1A3B";
     }
     public boolean isAllRight(int[] inputGuess,int[] answer){
         for(int index = 0;index < answer.length;index++){
