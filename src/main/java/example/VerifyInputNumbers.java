@@ -2,7 +2,7 @@ package example;
 
 public class VerifyInputNumbers {
     public boolean isisLegalInputNumbers(int[] inputNumbers) {
-        return verifyInputNumbersLength(inputNumbers);
+        return false;
     }
 
     private boolean verifyInputNumbersLength(int[] inputNumbers) {
