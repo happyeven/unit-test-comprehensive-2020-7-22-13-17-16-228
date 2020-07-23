@@ -1,14 +1,21 @@
 package example;
 
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
+
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.when;
 
 public class GuessNumberTest {
     @Test
     public void should_return_4A0B_when_guess_number_given_input_guess_1234_and_answer_1234() {
         //given
-        GuessNumber guessNumber = new GuessNumber();
+        int[] answer = {1, 2, 3, 4};
+        AnswerGenerator answerGenerator = Mockito.mock(AnswerGenerator.class);
+        when(answerGenerator.generate()).thenReturn(answer);
+
+        GuessNumber guessNumber = new GuessNumber(answerGenerator);
         int[] inputGuess = {1, 2, 3, 4};
         //when
         String result = guessNumber.guess(inputGuess);
