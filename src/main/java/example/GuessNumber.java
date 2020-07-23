@@ -12,13 +12,7 @@ public class GuessNumber {
         int correctPositionAmount = getOnCorrectPositionAmount(answer, inputGuess);
         int inputNUmberInAnswerAmount = getNumberInAnswerAmount(answer, inputGuess);
         int answerLength = answer.length;
-        if (inputNUmberInAnswerAmount == answerLength) {
-            return correctPositionAmount + "A" + (answerLength - correctPositionAmount) + "B";
-        }
-        if(inputNUmberInAnswerAmount < 4 && inputNUmberInAnswerAmount >0){
-            return String.format("%dA%dB", correctPositionAmount, inputNUmberInAnswerAmount - correctPositionAmount);
-        }
-        return "0A0B";
+        return correctPositionAmount + "A" + (inputNUmberInAnswerAmount - correctPositionAmount) + "B";
     }
 
     private boolean isAnswerContainNumber(int[] answer, int inputNumber) {
@@ -31,22 +25,22 @@ public class GuessNumber {
     }
 
     private int getNumberInAnswerAmount(int[] answer, int[] inputNumbers) {
-        int count = 0;
+        int inputNUmberInAnswerCount = 0;
         for (int currentNumber : inputNumbers) {
             if (isAnswerContainNumber(answer, currentNumber)) {
-                count++;
+                inputNUmberInAnswerCount ++;
             }
         }
-        return count;
+        return inputNUmberInAnswerCount;
     }
 
     private int getOnCorrectPositionAmount(int[] answer, int[] inputNumbers) {
-        int count = 0;
+        int onCorrectPositionNumberCount = 0;
         for (int index = 0; index < answer.length; index++) {
             if (answer[index] == inputNumbers[index]) {
-                count++;
+                onCorrectPositionNumberCount++;
             }
         }
-        return count;
+        return onCorrectPositionNumberCount;
     }
 }
