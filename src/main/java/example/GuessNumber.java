@@ -11,8 +11,7 @@ public class GuessNumber {
         int[] answer = this.answer;
         int correctPositionAmount = getOnCorrectPositionAmount(answer, inputGuess);
         int inputNUmberInAnswerAmount = getNumberInAnswerAmount(answer, inputGuess);
-        int answerLength = answer.length;
-        return correctPositionAmount + "A" + (inputNUmberInAnswerAmount - correctPositionAmount) + "B";
+        return String.format("%dA%dB", correctPositionAmount, inputNUmberInAnswerAmount - correctPositionAmount);
     }
 
     private boolean isAnswerContainNumber(int[] answer, int inputNumber) {
