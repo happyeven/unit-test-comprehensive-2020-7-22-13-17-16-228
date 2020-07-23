@@ -13,9 +13,11 @@ public class GuessNumber {
             return "4A0B";
         }
         int correctPositionAmount = getOnCorrectPositionAmount(answer, inputGuess);
-        int inputNUmberInAnswerAmount = getNumberInAnswerAmount(answer,inputGuess);
-        if(inputNUmberInAnswerAmount != 4 && inputNUmberInAnswerAmount != 0 && correctPositionAmount > 0){
-            return correctPositionAmount + "A" + (inputNUmberInAnswerAmount -correctPositionAmount) + "B";
+        int inputNUmberInAnswerAmount = getNumberInAnswerAmount(answer, inputGuess);
+        if (inputNUmberInAnswerAmount != 4 && inputNUmberInAnswerAmount != 0) {
+            if (correctPositionAmount > 0) {
+                return String.format("%dA%dB", correctPositionAmount, inputNUmberInAnswerAmount - correctPositionAmount);
+            }
         }
         return String.format("%dA%dB", correctPositionAmount, inputGuess.length - correctPositionAmount);
     }
