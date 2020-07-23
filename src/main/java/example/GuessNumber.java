@@ -18,7 +18,7 @@ public class GuessNumber {
         if(inputNUmberInAnswerAmount < 4 && inputNUmberInAnswerAmount >0){
             return String.format("%dA%dB", correctPositionAmount, inputNUmberInAnswerAmount - correctPositionAmount);
         }
-        return null;
+        return "0A0B";
     }
 
     private boolean isAnswerContainNumber(int[] answer, int inputNumber) {
