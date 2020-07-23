@@ -49,4 +49,18 @@ public class GuessNumberTest {
         //then
         assertEquals("0A4B", result);
     }
+
+    @Test
+    void should_return_1A1B_when_guess_number_given_input_guess_1546_and_answer_1234() {
+        //given
+        int[] answer = {1, 2, 3, 4};
+        AnswerGenerator answerGenerator = Mockito.mock(AnswerGenerator.class);
+        when(answerGenerator.generate()).thenReturn(answer);
+        GuessNumber guessNumber = new GuessNumber(answerGenerator);
+        int[] inputGuess = {1,5,4,6};
+        //when
+        String result = guessNumber.guess(inputGuess);
+        //then
+        assertEquals("1A1B", result);
+    }
 }
