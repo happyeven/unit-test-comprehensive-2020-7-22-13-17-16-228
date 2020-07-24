@@ -21,21 +21,11 @@ public class CurrentAnswerGeneratorTest {
     void should_number_in_answer_appear_only_once_when_generate_answer() {
         //given
         AnswerGenerator answerGenerator = new CurrentAnswerGenerator();
+        InputValidator inputValidator = new InputValidator();
         //when
         int[] answer = answerGenerator.generate();
         //then
-        assertEquals(true,isAppearOnlyOnce(answer));
+        assertEquals(true,inputValidator.isisLegalInputNumbers(answer));
     }
-
-    private boolean isAppearOnlyOnce(int[] answer) {
-        HashMap<Integer, Integer> inputNumbersAmountMap = new HashMap<>();
-        for (int currentNumber : answer) {
-            if (inputNumbersAmountMap.get(currentNumber) == null) {
-                inputNumbersAmountMap.put(currentNumber, 1);
-            } else {
-                return false;
-            }
-        }
-        return true;
-    }
+    
 }

@@ -2,7 +2,7 @@ package example;
 
 import java.util.HashMap;
 
-public class VerifyInputNumbers {
+public class InputValidator {
     public boolean isisLegalInputNumbers(int[] inputNumbers) {
         return verifyInputNumbersLength(inputNumbers) && isNumbersAppearOnlyOnce(inputNumbers);
     }

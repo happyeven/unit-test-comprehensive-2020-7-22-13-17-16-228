@@ -2,15 +2,15 @@ package example;
 
 public class GenerateOutput {
     private GuessNumber guessNumber;
-    private VerifyInputNumbers verifyInputNumbers;
+    private InputValidator inputValidator;
 
-    public GenerateOutput(GuessNumber guessNumber, VerifyInputNumbers verifyInputNumbers) {
+    public GenerateOutput(GuessNumber guessNumber, InputValidator inputValidator) {
         this.guessNumber = guessNumber;
-        this.verifyInputNumbers = verifyInputNumbers;
+        this.inputValidator = inputValidator;
     }
 
     public String getOutput(int[] inputGuess) {
-        if(!verifyInputNumbers.isisLegalInputNumbers(inputGuess)){
+        if(!inputValidator.isisLegalInputNumbers(inputGuess)){
             return "Wrong Input,Input again";
         }
         return null;
