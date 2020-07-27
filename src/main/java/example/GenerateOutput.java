@@ -13,6 +13,6 @@ public class GenerateOutput {
         if(!inputValidator.isisLegalInputNumbers(inputGuess)){
             return "Wrong Input,Input again";
         }
-        return null;
+        return guessNumber.guess(inputGuess);
     }
 }
