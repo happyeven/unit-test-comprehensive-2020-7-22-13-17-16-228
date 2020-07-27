@@ -26,7 +26,6 @@ public class GenerateOutputTest {
     @Test
     void should_return_wrong_input_input_again_when_generate_output_given_guess_1123() {
         //given
-        //given
         int[] answer = {1, 2, 3, 4};
         AnswerGenerator answerGenerator = Mockito.mock(AnswerGenerator.class);
         when(answerGenerator.generate()).thenReturn(answer);
@@ -37,5 +36,6 @@ public class GenerateOutputTest {
         //when
         String result = generateOutput.getOutput(inputGuess);
         //then
+        assertEquals("Wrong Input,Input again",result);
     }
 }

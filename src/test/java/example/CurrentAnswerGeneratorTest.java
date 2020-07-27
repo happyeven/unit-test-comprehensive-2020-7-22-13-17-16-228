@@ -27,5 +27,4 @@ public class CurrentAnswerGeneratorTest {
         //then
         assertEquals(true,inputValidator.isisLegalInputNumbers(answer));
     }
-    
 }
