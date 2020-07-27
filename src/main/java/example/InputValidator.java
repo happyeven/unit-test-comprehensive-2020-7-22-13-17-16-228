@@ -17,7 +17,8 @@ public class InputValidator {
     }
 
     private boolean IsNumbersUnique(int[] inputNumbers) {
-        return Arrays.stream(inputNumbers).boxed().collect(Collectors.toList()).stream().distinct().count() == inputNumbers.length;
+        return Arrays.stream(inputNumbers).boxed().collect(Collectors.toList())
+                .stream().distinct().count() == inputNumbers.length;
     }
 
     private boolean isNumbersInRange(int[] inputNumbers) {
