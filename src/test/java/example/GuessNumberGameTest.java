@@ -51,10 +51,28 @@ public class GuessNumberGameTest {
         InputValidator inputValidator = new InputValidator();
         GenerateOutput generateOutput = new GenerateOutput(guessNumber, inputValidator);
         GuessNumberGame guessNumberGame = new GuessNumberGame(generateOutput);
-        int[] inputGuess = { 1, 2, 3,4};
+        int[] inputGuess = {1, 2, 3, 4};
         //when
         String result = guessNumberGame.play(inputGuess);
         //then
-        assertEquals(result,"2A2B");
+        assertEquals(result, "2A2B");
+    }
+
+    @Test
+    void should_return_null_when_play_given_input_guess_1234_answer_4231_and_available_chance_equal_to_0() {
+        //given
+        int[] answer = {4, 2, 3, 1};
+        AnswerGenerator answerGenerator = Mockito.mock(AnswerGenerator.class);
+        when(answerGenerator.generate()).thenReturn(answer);
+        GuessNumber guessNumber = new GuessNumber(answerGenerator);
+        InputValidator inputValidator = new InputValidator();
+        GenerateOutput generateOutput = new GenerateOutput(guessNumber, inputValidator);
+        GuessNumberGame guessNumberGame = new GuessNumberGame(generateOutput);
+        int[] inputGuess = {1, 2, 3, 4};
+        guessNumberGame.setAvailableChance(0);
+        //when
+        String result = guessNumberGame.play(inputGuess);
+        //then
+        assertEquals(result, null);
     }
 }

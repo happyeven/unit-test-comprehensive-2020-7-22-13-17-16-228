@@ -11,4 +11,8 @@ public class GuessNumberGame {
         availableChance --;
         return generateOutput.getOutput(inputGuess);
     }
+
+    public void setAvailableChance(int availableChance) {
+        this.availableChance = availableChance;
+    }
 }
