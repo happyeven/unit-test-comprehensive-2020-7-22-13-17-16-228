@@ -1,10 +1,7 @@
 package example;
 
 import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class InputValidator {
     public boolean isLegalInputNumbers(int[] inputNumbers) {
