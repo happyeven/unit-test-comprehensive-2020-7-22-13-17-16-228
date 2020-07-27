@@ -4,7 +4,8 @@ import java.util.HashMap;
 
 public class InputValidator {
     public boolean isisLegalInputNumbers(int[] inputNumbers) {
-        return verifyInputNumbersLength(inputNumbers) && isNumbersAppearOnlyOnce(inputNumbers);
+        return verifyInputNumbersLength(inputNumbers) && isNumbersAppearOnlyOnce(inputNumbers)
+                && isNumbersInRange(inputNumbers);
     }
 
     private boolean verifyInputNumbersLength(int[] inputNumbers) {
@@ -22,5 +23,15 @@ public class InputValidator {
         }
         return true;
     }
-
+    private boolean isNumbersInRange(int[] inputNumbers){
+        for(int inputNumber : inputNumbers){
+            if(!isNumberInRange(inputNumber)){
+                return false;
+            }
+        }
+        return true;
+    }
+    private boolean isNumberInRange(int inputNumber){
+        return inputNumber >= 0 && inputNumber <=9;
+    }
 }
