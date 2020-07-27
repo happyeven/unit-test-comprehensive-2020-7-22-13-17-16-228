@@ -8,10 +8,7 @@ public class GuessNumber {
     }
 
     public String guess(int[] inputGuess) {
-        int[] answer = this.answer;
-        int correctPositionAmount = getAmountOfA(answer, inputGuess);
-        int inputNUmberInAnswerAmount = getAmountOfB(answer, inputGuess);
-        return String.format("%dA%dB", correctPositionAmount, inputNUmberInAnswerAmount - correctPositionAmount);
+        return String.format("%dA%dB", getAmountOfA(this.answer, inputGuess), getAmountOfB(this.answer, inputGuess));
     }
 
     private boolean isAnswerContainNumber(int[] answer, int inputNumber) {
@@ -30,7 +27,7 @@ public class GuessNumber {
                 inputNUmberInAnswerCount ++;
             }
         }
-        return inputNUmberInAnswerCount;
+        return inputNUmberInAnswerCount - getAmountOfA(answer,inputNumbers);
     }
 
     private int getAmountOfA(int[] answer, int[] inputNumbers) {
