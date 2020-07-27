@@ -8,6 +8,6 @@ public class GuessNumberGame {
     }
 
     public String play(int[] inputGuess){
-        return null;
+        return generateOutput.getOutput(inputGuess);
     }
 }
