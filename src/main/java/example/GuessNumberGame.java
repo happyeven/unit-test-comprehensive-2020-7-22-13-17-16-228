@@ -8,6 +8,9 @@ public class GuessNumberGame {
     }
 
     public String play(int[] inputGuess){
+        if(this.availableChance == 0){
+            return null;
+        }
         availableChance --;
         return generateOutput.getOutput(inputGuess);
     }
