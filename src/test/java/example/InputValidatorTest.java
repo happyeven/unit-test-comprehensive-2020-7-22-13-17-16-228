@@ -37,4 +37,15 @@ public class InputValidatorTest {
         //then
         assertEquals(true,isLegalInputNumbers);
     }
+
+    @Test
+    void should_return_false_when__input_numbers_given_11234() {
+        //given
+        InputValidator inputValidator = new InputValidator();
+        int[] inputNumbers = {11,2,3,4};
+        //when
+        boolean isLegalInputNumbers = inputValidator.isisLegalInputNumbers(inputNumbers);
+        //then
+        assertEquals(false,isLegalInputNumbers);
+    }
 }
