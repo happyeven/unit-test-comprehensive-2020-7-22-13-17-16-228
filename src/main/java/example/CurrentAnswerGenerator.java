@@ -1,7 +1,6 @@
 package example;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Random;
 
@@ -12,23 +11,25 @@ public class CurrentAnswerGenerator implements AnswerGenerator {
     }
 
     private int generateNumberFrom0to9() {
-        Random random = new Random();
-        int a = random.nextInt(10);
-        return a;
+        return new Random().nextInt(10);
     }
 
     private int[] generateAnswer() {
-        List<Integer> answerList = new ArrayList<>();
+        return generateInputNumbersFromList(getAnswer());
+    }
+
+    private List<Integer> getAnswer() {
+        List<Integer> answer = new ArrayList<>();
         do {
             int generateNumber = generateNumberFrom0to9();
-            if (!answerList.contains(generateNumber)) {
-                answerList.add(generateNumber);
+            if (!answer.contains(generateNumber)) {
+                answer.add(generateNumber);
             }
-        } while (answerList.size() < 4);
-        int[] answer = new int[4];
-        for (int index = 0; index < 4; index++) {
-            answer[index] = answerList.get(index);
-        }
+        } while (answer.size() < 4);
         return answer;
+    }
+
+    private int[] generateInputNumbersFromList(List<Integer> answers) {
+        return answers.stream().mapToInt(Integer::valueOf).toArray();
     }
 }
