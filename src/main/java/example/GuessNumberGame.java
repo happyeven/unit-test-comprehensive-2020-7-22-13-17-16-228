@@ -3,15 +3,16 @@ package example;
 public class GuessNumberGame {
     GenerateOutput generateOutput;
     int availableChance = 6;
+
     public GuessNumberGame(GenerateOutput generateOutput) {
         this.generateOutput = generateOutput;
     }
 
-    public String play(int[] inputGuess){
-        if(this.availableChance == 0){
+    public String play(int[] inputGuess) {
+        if (this.availableChance == 0) {
             return null;
         }
-        availableChance --;
+        availableChance--;
         return generateOutput.getOutput(inputGuess);
     }
 

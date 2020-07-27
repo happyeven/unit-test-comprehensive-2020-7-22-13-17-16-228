@@ -1,9 +1,6 @@
 package example;
 
 import org.junit.jupiter.api.Test;
-
-import java.util.HashMap;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class CurrentAnswerGeneratorTest {
@@ -25,6 +22,6 @@ public class CurrentAnswerGeneratorTest {
         //when
         int[] answer = answerGenerator.generate();
         //then
-        assertEquals(true,inputValidator.isisLegalInputNumbers(answer));
+        assertEquals(true,inputValidator.isLegalInputNumbers(answer));
     }
 }

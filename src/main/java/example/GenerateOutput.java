@@ -10,7 +10,7 @@ public class GenerateOutput {
     }
 
     public String getOutput(int[] inputGuess) {
-        if(!inputValidator.isisLegalInputNumbers(inputGuess)){
+        if (!inputValidator.isLegalInputNumbers(inputGuess)) {
             return Constant.errorMessage;
         }
         return guessNumber.guess(inputGuess);

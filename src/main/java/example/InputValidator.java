@@ -7,7 +7,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class InputValidator {
-    public boolean isisLegalInputNumbers(int[] inputNumbers) {
+    public boolean isLegalInputNumbers(int[] inputNumbers) {
         return verifyInputNumbersLength(inputNumbers) && IsNumbersUnique(inputNumbers)
                 && isNumbersInRange(inputNumbers);
     }

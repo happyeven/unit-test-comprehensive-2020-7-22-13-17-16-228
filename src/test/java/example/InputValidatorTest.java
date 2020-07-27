@@ -11,7 +11,7 @@ public class InputValidatorTest {
         InputValidator inputValidator = new InputValidator();
         int[] inputGuess = {1,1};
         //when
-        boolean isLegalInputNumbers = inputValidator.isisLegalInputNumbers(inputGuess);
+        boolean isLegalInputNumbers = inputValidator.isLegalInputNumbers(inputGuess);
         //then
         assertEquals(false,isLegalInputNumbers);
     }
@@ -22,7 +22,7 @@ public class InputValidatorTest {
         InputValidator inputValidator = new InputValidator();
         int[] inputGuess = {1,1,2,3};
         //when
-        boolean isLegalInputNumbers = inputValidator.isisLegalInputNumbers(inputGuess);
+        boolean isLegalInputNumbers = inputValidator.isLegalInputNumbers(inputGuess);
         //then
         assertEquals(false,isLegalInputNumbers);
     }
@@ -33,7 +33,7 @@ public class InputValidatorTest {
         InputValidator inputValidator = new InputValidator();
         int[] inputGuess = {1,2,3,4};
         //when
-        boolean isLegalInputNumbers = inputValidator.isisLegalInputNumbers(inputGuess);
+        boolean isLegalInputNumbers = inputValidator.isLegalInputNumbers(inputGuess);
         //then
         assertEquals(true,isLegalInputNumbers);
     }
@@ -44,7 +44,7 @@ public class InputValidatorTest {
         InputValidator inputValidator = new InputValidator();
         int[] inputNumbers = {11,2,3,4};
         //when
-        boolean isLegalInputNumbers = inputValidator.isisLegalInputNumbers(inputNumbers);
+        boolean isLegalInputNumbers = inputValidator.isLegalInputNumbers(inputNumbers);
         //then
         assertEquals(false,isLegalInputNumbers);
     }

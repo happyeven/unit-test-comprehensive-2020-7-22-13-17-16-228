@@ -23,10 +23,10 @@ public class GuessNumber {
         int amountOfInputNumberInAnswer = 0;
         for (int currentNumber : inputNumbers) {
             if (isAnswerContainNumber(answer, currentNumber)) {
-                amountOfInputNumberInAnswer ++;
+                amountOfInputNumberInAnswer++;
             }
         }
-        return amountOfInputNumberInAnswer - getAmountOfA(answer,inputNumbers);
+        return amountOfInputNumberInAnswer - getAmountOfA(answer, inputNumbers);
     }
 
     private int getAmountOfA(int[] answer, int[] inputNumbers) {
