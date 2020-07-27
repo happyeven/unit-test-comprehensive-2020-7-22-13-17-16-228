@@ -20,22 +20,22 @@ public class GuessNumber {
     }
 
     private int getAmountOfB(int[] answer, int[] inputNumbers) {
-        int inputNUmberInAnswerCount = 0;
+        int amountOfInputNumberInAnswer = 0;
         for (int currentNumber : inputNumbers) {
             if (isAnswerContainNumber(answer, currentNumber)) {
-                inputNUmberInAnswerCount ++;
+                amountOfInputNumberInAnswer ++;
             }
         }
-        return inputNUmberInAnswerCount - getAmountOfA(answer,inputNumbers);
+        return amountOfInputNumberInAnswer - getAmountOfA(answer,inputNumbers);
     }
 
     private int getAmountOfA(int[] answer, int[] inputNumbers) {
-        int onCorrectPositionNumberCount = 0;
+        int amountOfA = 0;
         for (int index = 0; index < answer.length; index++) {
             if (answer[index] == inputNumbers[index]) {
-                onCorrectPositionNumberCount++;
+                amountOfA++;
             }
         }
-        return onCorrectPositionNumberCount;
+        return amountOfA;
     }
 }
