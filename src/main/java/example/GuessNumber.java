@@ -9,8 +9,8 @@ public class GuessNumber {
 
     public String guess(int[] inputGuess) {
         int[] answer = this.answer;
-        int correctPositionAmount = getOnCorrectPositionAmount(answer, inputGuess);
-        int inputNUmberInAnswerAmount = getNumberInAnswerAmount(answer, inputGuess);
+        int correctPositionAmount = getAmountOfA(answer, inputGuess);
+        int inputNUmberInAnswerAmount = getAmountOfB(answer, inputGuess);
         return String.format("%dA%dB", correctPositionAmount, inputNUmberInAnswerAmount - correctPositionAmount);
     }
 
@@ -23,7 +23,7 @@ public class GuessNumber {
         return false;
     }
 
-    private int getNumberInAnswerAmount(int[] answer, int[] inputNumbers) {
+    private int getAmountOfB(int[] answer, int[] inputNumbers) {
         int inputNUmberInAnswerCount = 0;
         for (int currentNumber : inputNumbers) {
             if (isAnswerContainNumber(answer, currentNumber)) {
@@ -33,7 +33,7 @@ public class GuessNumber {
         return inputNUmberInAnswerCount;
     }
 
-    private int getOnCorrectPositionAmount(int[] answer, int[] inputNumbers) {
+    private int getAmountOfA(int[] answer, int[] inputNumbers) {
         int onCorrectPositionNumberCount = 0;
         for (int index = 0; index < answer.length; index++) {
             if (answer[index] == inputNumbers[index]) {
