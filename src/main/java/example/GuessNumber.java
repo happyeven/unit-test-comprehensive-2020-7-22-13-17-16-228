@@ -18,7 +18,7 @@ public class GuessNumber {
         return Arrays.stream(answer).boxed().collect(Collectors.toList()).contains(inputNumber);
     }
 
-    private int getAmountOfB(int[] answer, int[] inputNumbers) {
+    private int getAmountOfB(int[] answer, int[] inputNumbers) { //todo
         int amountOfInputNumberInAnswer = 0;
         for (int currentNumber : inputNumbers) {
             if (isAnswerContainNumber(answer, currentNumber)) {
@@ -28,7 +28,7 @@ public class GuessNumber {
         return amountOfInputNumberInAnswer - getAmountOfA(answer, inputNumbers);
     }
 
-    private int getAmountOfA(int[] answer, int[] inputNumbers) {
+    private int getAmountOfA(int[] answer, int[] inputNumbers) { //todo
         int amountOfA = 0;
         for (int index = 0; index < answer.length; index++) {
             if (answer[index] == inputNumbers[index]) {

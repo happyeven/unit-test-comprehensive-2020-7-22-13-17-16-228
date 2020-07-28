@@ -12,7 +12,7 @@ public class CurrentAnswerGenerator implements AnswerGenerator {
 
     private int generateNumberFrom0to9() {
         return new Random().nextInt(10);
-    }
+    } //todo
 
     private int[] generateAnswer() {
         return generateInputNumbersFromList(getAnswer());
@@ -20,12 +20,12 @@ public class CurrentAnswerGenerator implements AnswerGenerator {
 
     private List<Integer> getAnswer() {
         List<Integer> answer = new ArrayList<>();
-        do {
+        do {  //todo stream
             int generateNumber = generateNumberFrom0to9();
             if (!answer.contains(generateNumber)) {
                 answer.add(generateNumber);
             }
-        } while (answer.size() < 4);
+        } while (answer.size() < 4); //todo
         return answer;
     }
 
