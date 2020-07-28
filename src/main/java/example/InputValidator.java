@@ -10,7 +10,7 @@ public class InputValidator {
     }
 
     private boolean verifyInputNumbersLength(int[] inputNumbers) {
-        return inputNumbers.length == 4;
+        return inputNumbers.length == NumberConstant.INPUT_GUESS_LENGTH;
     }
 
     private boolean IsNumbersUnique(int[] inputNumbers) {
@@ -28,6 +28,6 @@ public class InputValidator {
     }
 
     private boolean isNumberInRange(int inputNumber) {
-        return inputNumber >= 0 && inputNumber <= 9;
+        return inputNumber >= NumberConstant.NUMBER_MIN_RANGE && inputNumber < NumberConstant.NUMBER_MAX_RANGE;
     }
 }

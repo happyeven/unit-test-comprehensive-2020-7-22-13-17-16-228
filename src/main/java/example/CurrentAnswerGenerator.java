@@ -11,8 +11,8 @@ public class CurrentAnswerGenerator implements AnswerGenerator {
     }
 
     private int generateNumberFrom0to9() {
-        return new Random().nextInt(10);
-    } //todo
+        return new Random().nextInt(NumberConstant.NUMBER_MAX_RANGE);
+    }
 
     private int[] generateAnswer() {
         return generateInputNumbersFromList(getAnswer());
@@ -25,7 +25,7 @@ public class CurrentAnswerGenerator implements AnswerGenerator {
             if (!answer.contains(generateNumber)) {
                 answer.add(generateNumber);
             }
-        } while (answer.size() < 4); //todo
+        } while (answer.size() < NumberConstant.ANSWER_LENGTH); //todo
         return answer;
     }
 
