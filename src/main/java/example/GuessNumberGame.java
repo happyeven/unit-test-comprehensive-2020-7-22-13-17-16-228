@@ -4,6 +4,14 @@ public class GuessNumberGame {
     GenerateOutput generateOutput;
     int availableChance = 6;
 
+    private GuessNumber guessNumber;
+    private InputValidator inputValidator;
+
+    public GuessNumberGame(GuessNumber guessNumber, InputValidator inputValidator) {
+        this.guessNumber = guessNumber;
+        this.inputValidator = inputValidator;
+    }
+
     public GuessNumberGame(GenerateOutput generateOutput) {
         this.generateOutput = generateOutput;
     }
