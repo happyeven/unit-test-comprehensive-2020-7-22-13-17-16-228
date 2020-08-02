@@ -34,4 +34,12 @@ public class GuessNumberGame {
     public void setAvailableChance(int availableChance) {
         this.availableChance = availableChance;
     }
+
+    public String playGame(int[] inputGuess) {
+        if (this.availableChance == 0) {
+            return null;
+        }
+        availableChance--;
+        return getOutput(inputGuess);
+    }
 }
