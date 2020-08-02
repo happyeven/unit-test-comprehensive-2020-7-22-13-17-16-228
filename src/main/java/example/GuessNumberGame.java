@@ -18,8 +18,19 @@ public class GuessNumberGame {
         return guessNumber.guess(inputGuess);
     }
 
-    public void setAvailableChance(int availableChance) {
-        this.availableChance = availableChance;
+    public static void main(String[] args) {
+        GuessNumber guessNumber = new GuessNumber(new CurrentAnswerGenerator());
+        InputValidator inputValidator = new InputValidator();
+        GuessNumberGame guessNumberGame = new GuessNumberGame(guessNumber, inputValidator);
+        int chance = NumberConstant.PLAY_CHANCE;
+        Scanner scan = new Scanner(System.in);
+        while (chance != 0) {
+            int[] inputGuess = getInputFromConsole(scan);
+            String output = guessNumberGame.getOutput(inputGuess);
+            System.out.println(output);
+            chance--;
+        }
+        scan.close();
     }
 
     private static int[] getInputFromConsole(Scanner scan) {
