@@ -26,7 +26,6 @@ public class CurrentAnswerGenerator implements AnswerGenerator {
                 answer.add(generateNumber);
             }
         } while (answer.size() < NumberConstant.ANSWER_LENGTH);
-        System.out.println(answer);
         return answer;
     }
 
