@@ -1,8 +1,8 @@
 package example;
 
-public class GuessNumberGame {
-    int availableChance = 6;
+import java.util.Scanner;
 
+public class GuessNumberGame {
     private GuessNumber guessNumber;
     private InputValidator inputValidator;
 
