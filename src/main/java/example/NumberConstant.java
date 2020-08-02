@@ -13,4 +13,6 @@ public class NumberConstant {
     public static final int INPUT_GUESS_LENGTH = 4;
 
     public static final int ANSWER_LENGTH = 4;
+
+    public static final int PLAY_CHANCE = 6;
 }
