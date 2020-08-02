@@ -22,21 +22,11 @@ public class GuessNumberGame {
         this.availableChance = availableChance;
     }
 
-    public String playGame(int[] inputGuess) {
-        if (this.availableChance == 0) {
-            return null;
-        }
-        availableChance--;
-        return getOutput(inputGuess);
-    }
-
-    private static int[] getInputFromConsole() {
-        Scanner scan = new Scanner(System.in);
+    private static int[] getInputFromConsole(Scanner scan) {
         int[] inputNumber = new int[NumberConstant.INPUT_GUESS_LENGTH];
         for (int j = 0; j < inputNumber.length; j++) {
             inputNumber[j] = scan.nextInt();
         }
-        scan.close();
         return inputNumber;
     }
 }
