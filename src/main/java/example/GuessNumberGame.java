@@ -29,4 +29,14 @@ public class GuessNumberGame {
         availableChance--;
         return getOutput(inputGuess);
     }
+
+    private static int[] getInputFromConsole() {
+        Scanner scan = new Scanner(System.in);
+        int[] inputNumber = new int[NumberConstant.INPUT_GUESS_LENGTH];
+        for (int j = 0; j < inputNumber.length; j++) {
+            inputNumber[j] = scan.nextInt();
+        }
+        scan.close();
+        return inputNumber;
+    }
 }
