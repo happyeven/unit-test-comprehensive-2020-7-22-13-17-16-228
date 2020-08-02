@@ -47,11 +47,10 @@ public class GuessNumberGameTest {
         when(answerGenerator.generate()).thenReturn(answer);
         GuessNumber guessNumber = new GuessNumber(answerGenerator);
         InputValidator inputValidator = new InputValidator();
-        GenerateOutput generateOutput = new GenerateOutput(guessNumber, inputValidator);
-        GuessNumberGame guessNumberGame = new GuessNumberGame(generateOutput);
+        GuessNumberGame guessNumberGame = new GuessNumberGame(guessNumber, inputValidator);
         int[] inputGuess = {1, 2, 3, 4};
         //when
-        String result = guessNumberGame.play(inputGuess);
+        String result = guessNumberGame.playGame(inputGuess);
         //then
         assertEquals(result, "2A2B");
     }
