@@ -24,6 +24,13 @@ public class GuessNumberGame {
         return generateOutput.getOutput(inputGuess);
     }
 
+    public String getOutput(int[] inputGuess) {
+        if (!inputValidator.isLegalInputNumbers(inputGuess)) {
+            return ErrorMessageConstant.ERROR_MESSAGE;
+        }
+        return guessNumber.guess(inputGuess);
+    }
+
     public void setAvailableChance(int availableChance) {
         this.availableChance = availableChance;
     }
