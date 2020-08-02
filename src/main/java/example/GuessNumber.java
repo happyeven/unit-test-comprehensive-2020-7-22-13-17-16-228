@@ -11,30 +11,32 @@ public class GuessNumber {
     }
 
     public String guess(int[] inputGuess) {
-        return String.format("%dA%dB", getAmountOfA(this.answer, inputGuess), getAmountOfB(this.answer, inputGuess));
+        return String.format("%dA%dB", getAmountOfPositionAndNumberAllCorrect(this.answer, inputGuess), getAmountOfNumberCorrectButPositionIncorrect(this.answer, inputGuess));
     }
 
     private boolean isAnswerContainNumber(int[] answer, int inputNumber) {
         return Arrays.stream(answer).boxed().collect(Collectors.toList()).contains(inputNumber);
     }
 
-    private int getAmountOfB(int[] answer, int[] inputNumbers) { //todo
-        int amountOfInputNumberInAnswer = 0;
+    private int getAmountOfNumberCorrectButPositionIncorrect(int[] answer, int[] inputNumbers) {
+        int amountOfNumberCorrect = 0;
         for (int currentNumber : inputNumbers) {
             if (isAnswerContainNumber(answer, currentNumber)) {
-                amountOfInputNumberInAnswer++;
+                amountOfNumberCorrect++;
             }
         }
-        return amountOfInputNumberInAnswer - getAmountOfA(answer, inputNumbers);
+        int amountOfPositionAndNumberAllCorrect = getAmountOfPositionAndNumberAllCorrect(answer, inputNumbers);
+        int amountOfNumberCorrectButPositionIncorrect = amountOfNumberCorrect - amountOfPositionAndNumberAllCorrect;
+        return amountOfNumberCorrectButPositionIncorrect;
     }
 
-    private int getAmountOfA(int[] answer, int[] inputNumbers) { //todo
-        int amountOfA = 0;
+    private int getAmountOfPositionAndNumberAllCorrect(int[] answer, int[] inputNumbers) {
+        int amountOfPositionAndNumberAllCorrect = 0;
         for (int index = 0; index < answer.length; index++) {
             if (answer[index] == inputNumbers[index]) {
-                amountOfA++;
+                amountOfPositionAndNumberAllCorrect++;
             }
         }
-        return amountOfA;
+        return amountOfPositionAndNumberAllCorrect;
     }
 }
