@@ -11,13 +11,6 @@ public class GuessNumberGame {
         this.inputValidator = inputValidator;
     }
 
-    public String getOutput(int[] inputGuess) {
-        if (!inputValidator.isLegalInputNumbers(inputGuess)) {
-            return ErrorMessageConstant.ERROR_MESSAGE;
-        }
-        return guessNumber.guess(inputGuess);
-    }
-
     public static void main(String[] args) {
         GuessNumber guessNumber = new GuessNumber(new CurrentAnswerGenerator());
         InputValidator inputValidator = new InputValidator();
@@ -32,6 +25,14 @@ public class GuessNumberGame {
         }
         scan.close();
     }
+
+    public String getOutput(int[] inputGuess) {
+        if (!inputValidator.isLegalInputNumbers(inputGuess)) {
+            return ErrorMessageConstant.ERROR_MESSAGE;
+        }
+        return guessNumber.guess(inputGuess);
+    }
+
 
     private static int[] getInputFromConsole(Scanner scan) {
         int[] inputNumber = new int[NumberConstant.INPUT_GUESS_LENGTH];
