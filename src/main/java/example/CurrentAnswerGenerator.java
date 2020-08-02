@@ -20,12 +20,13 @@ public class CurrentAnswerGenerator implements AnswerGenerator {
 
     private List<Integer> getAnswer() {
         List<Integer> answer = new ArrayList<>();
-        do {  //todo stream
+        do {
             int generateNumber = generateNumberFrom0to9();
             if (!answer.contains(generateNumber)) {
                 answer.add(generateNumber);
             }
-        } while (answer.size() < NumberConstant.ANSWER_LENGTH); //todo
+        } while (answer.size() < NumberConstant.ANSWER_LENGTH);
+        System.out.println(answer);
         return answer;
     }
 
