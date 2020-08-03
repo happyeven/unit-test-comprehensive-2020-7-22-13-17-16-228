@@ -20,6 +20,9 @@ public class GuessNumberGame {
         while (chance != 0) {
             int[] inputGuess = getInputFromConsole(scan);
             String output = guessNumberGame.getOutput(inputGuess);
+            if(output.equals(MessageConstant.SUCCESS_CODE)){
+
+            }
             System.out.println(output);
             chance--;
         }
